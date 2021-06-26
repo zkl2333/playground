@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import { registerMicroApps, start } from "qiankun";
-import { appList } from "./applist";
+import { appList } from "./app-list";
 
 registerMicroApps(appList);
 

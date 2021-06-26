@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { appList } from "../appList";
+import { appList } from "../app-list";
 export default defineComponent({
   name: "Header",
   setup: () => {

@@ -1,0 +1,29 @@
+name: gh-pages
+on:
+    push:
+        branches:
+            - master
+jobs:
+    deploy:
+        runs-on: ubuntu-18.04
+        steps:
+ deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: 迁出代码
+              uses: actions/checkout@v2
+
+            - name: 安装依赖以及编译
+              run: |
+                  yarn
+                  yarn build
+
+            - name: fix 单页应用路由问题
+              run: cp ./dist/index.html ./dist/404.html
+
+            - name: 部署
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./dist
+                  publish_branch: gh-pages
