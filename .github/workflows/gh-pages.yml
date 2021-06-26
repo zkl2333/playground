@@ -2,12 +2,9 @@ name: gh-pages
 on:
     push:
         branches:
-            - master
+            - main
 jobs:
     deploy:
-        runs-on: ubuntu-18.04
-        steps:
- deploy:
         runs-on: ubuntu-latest
         steps:
             - name: 迁出代码
